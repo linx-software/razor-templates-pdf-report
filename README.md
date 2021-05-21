@@ -1,9 +1,9 @@
-# PDF-Reports
-Generate PDF Reports in Linx using HTML templates and a small command-line tool called "wkhtmltopdf"
+# Razor Templates Examples including PDF Reports
+This is a collection of example on how to use Razor Templates in Linx. This also inludes how to generate PDF Reports in Linx using HTML templates and a small command-line tool called "wkhtmltopdf"
 
 ## Overview
 
-A very helpful feature of any system is to be able to automatically generate reports and forward it to users, either via Email, or on a site for download. There are a lot of technologies available for large report generation, i.e. SQL Reporting Services, Knowage, Crystal Reports etc. But they are mostly targeting large setups, and sometimes you just want a quick report without the hassle.
+Razor templates are a really easy way to create text-based models and populate them with data. It's really helpful with anything HTML, but can be used on normal text as well. In this sample there are 4 different ways to use Razor templates to create text using a template and models. Additionally, an example on how to create PDF reports. A very helpful feature of any system is to be able to automatically generate reports and forward it to users, either via Email, or on a site for download. There are a lot of technologies available for large report generation, i.e. SQL Reporting Services, Knowage, Crystal Reports etc. But they are mostly targeting large setups, and sometimes you just want a quick report without the hassle.
 
 Although Linx, by itself cannot create PDFs, with the help of some other tools, it’s really simple.
 
@@ -24,22 +24,32 @@ Using Linx Designer, open the solution file "PDFReportWithHTMLTemplate.lsoz", co
 ## Settings
 
 - Path to "wkhtmltopdf.exe" - wkhtmltopdfpath. Example: "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+- Path to location to save example files - PathToSaveExampleFiles. Example: "C:\temp\" 
 
 ## Description
 
-In this example I’ve created a small Linx Solution that:
+This example includes a small Linx Solution that:
 
+- Show 4 different ways to use Models and Templates to Create text. Under the folder "RazorExamples"
 - Uses data in a understandable structure
-- With Razor Templates, generates an HTML file
+- With Razor Templates, generates text and HTML files
 - Which then can be converted to a PDF file using a tool called wkhtmltopdf (https://wkhtmltopdf.org/ 4) You’ll need to download and install this to run this sample.
 
 ### Data Structure
 
-I’ve created a Type in Linx called “Report” which consists of some Report data, i.e. Report Name, Author, Date and Version. It also contains another Type called “Rows”. Each “Row” is split up into “Columns” which contains a “Value”. Please view the file "Datastructure.png" as an example representation of this.
+For the Razor Examples, a Models folder with types for each sample.
+
+For the PDF Reports, I’ve created a Type in Linx called “Report” which consists of some Report data, i.e. Report Name, Author, Date and Version. It also contains another Type called “Rows”. Each “Row” is split up into “Columns” which contains a “Value”. Please view the file "Datastructure.png" as an example representation of this.
 
 ### Functions
 
-The following functions were built to build a basic report:
+In the "RazorExamples" folder, the following functions are available:
+- **A1_SimpleModel**: Shows how to create a text file using a simple model
+- **A2_MoreComplexListModel**: Shows how to create a more complicated text file with a model containing a List
+- **B1_SimpleHTML**: Shows how to create a simple HTML file using a simple model
+- **B2_EmailTemplate**: Shows how to create a nicely formatted Email HTML using a complex data model with a List
+
+In the "RazorPDFReport" folder, the following functions were built to build a basic report:
 
 - **CleanUpData:** This first function simply takes the Report Data given and makes sure that each of the Rows has the same amount of Columns. That is important because the Report Generation will fail if they are not the same.
 - **FormatReport:** Using Razor Templates and some really simple HTML, the Report Data is used to generate and HTML page for the report. Being HTML one can make use of CSS to give the Report really good aesthetics, or keep it simple like in this example.
@@ -47,7 +57,7 @@ The following functions were built to build a basic report:
 
 ### Example Template:
 
-Here’s the Razor Template. You can use any CSS or HTML:
+For the PDF Report, Here’s the Razor Template. You can use any CSS or HTML:
 
 ```
 <html>
