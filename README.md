@@ -1,7 +1,7 @@
 # Razor Templates Examples including PDF Reports
 
 ## Description
-This is a collection of example on how to use Razor Templates in Linx. This also inludes how to generate PDF Reports in Linx using HTML templates and a small command-line tool called "wkhtmltopdf".
+This is a collection of examples on how to use Razor Templates in Linx. This also inludes how to generate PDF Reports in Linx using HTML templates and a small command-line tool called "wkhtmltopdf".
 
 Razor templates are a really easy way to create text-based models and populate them with data. It's really helpful with anything HTML, but can be used on normal text as well. In this sample there are 4 different ways to use Razor templates to create text using a template and models. Additionally, an example on how to create PDF reports. A very helpful feature of any system is to be able to automatically generate reports and forward it to users, either via Email, or on a site for download. There are a lot of technologies available for large report generation, i.e. SQL Reporting Services, Knowage, Crystal Reports etc. But they are mostly targeting large setups, and sometimes you just want a quick report without the hassle
 
