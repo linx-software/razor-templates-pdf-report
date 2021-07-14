@@ -9,6 +9,7 @@ Razor templates are a really easy way to create text-based models and populate t
 ## Installation
 ### Pre-requisites
 
+- Linx Designer at https://linx.software
 - Download wkhtmltopdf at https://wkhtmltopdf.org/
 
 ### Configure Solution Settings
